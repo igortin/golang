@@ -2,18 +2,11 @@ package main
 
 import "fmt"
 
-
-
-
-
-
-
 // create sruct Node
 type Node struct {
 	val int
 	next *Node
 }
-
 
 // create struct the list integers
 type intList struct {
@@ -50,6 +43,7 @@ func (p *intList) addNode(value int) error {
 	}
 	return nil
 }
+
 // method of struct intList
 func (p *intList) showElementLinkedList() error {
 	cNode := p.head
@@ -67,10 +61,12 @@ func (p *intList) showElementLinkedList() error {
 	}
 	return nil
 }
+
 func (p *intList) nextStep() *Node {
 	p.cNode = p.head.next
 	return p.cNode
 }
+
 func removeDuplicate(head *Node) *Node {
 	if head == nil {
 		return nil
@@ -91,9 +87,12 @@ func main() {
 	nums := []int{1, -1,-1, -2, -3,-3}
 	linkedList := "linkedlist"
 	ListNode := createintList(linkedList)
+
 	for _,v := range nums {
 		ListNode.addNode(v)
 	}
+	
 	removeDuplicate(ListNode.head)
+	
 	ListNode.showElementLinkedList()
 }
